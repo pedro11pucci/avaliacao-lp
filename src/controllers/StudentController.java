@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import dao.StudentDAO;
 import gui.gui;
 import gui.components.AlunoRow;
+import javax.swing.BoxLayout;
 import models.Student;
 
 public class StudentController {
@@ -15,20 +16,15 @@ public class StudentController {
     public static void showStudents(){
         ArrayList<Student> list = dao.getAll();
         int contador = 0;
+        
+        gui.alunosPainel.setLayout(new BoxLayout(gui.alunosPainel, BoxLayout.Y_AXIS));
 
         for (Student student : list) {
             AlunoRow row = new AlunoRow(student);
-            row.getViewButton().setVisible(false);
-            row.getEdiButton().setVisible(false);
-            row.getDeleteButton().setVisible(false);
-            gui.AlunosPainel.add(row);
-            gui.AlunosPainel.repaint();
-
-            contador++;
+            row.setVisible(true);
+            gui.alunosPainel.add(row);
         }
-
-        gui.AlunosPainel.setPreferredSize(new Dimension(501, 50*contador));
-        gui.AlunosPainel.revalidate();
-        gui.AlunosPainel.repaint();
+        gui.alunosPainel.setVisible(true);
+        gui.alunosPainel.revalidate();
     }
 }

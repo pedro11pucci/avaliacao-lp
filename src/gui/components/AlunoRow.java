@@ -49,6 +49,8 @@ public class AlunoRow extends javax.swing.JPanel {
         DeleteButton = new javax.swing.JButton();
         EditButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 204));
+
         AlunoNomeCampo.setEditable(false);
 
         ViewButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/components/view_icon.png"))); // NOI18N

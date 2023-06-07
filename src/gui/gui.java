@@ -18,6 +18,7 @@ public class gui extends javax.swing.JFrame {
     public gui() {
         initComponents();
         StudentController.showStudents();
+
     }
 
     /**
@@ -41,7 +42,7 @@ public class gui extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         AlturaCampo1 = new javax.swing.JTextField();
         CadastrarBotao = new javax.swing.JButton();
-        AlunosPainel = new javax.swing.JScrollPane();
+        alunosPainel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,6 +69,11 @@ public class gui extends javax.swing.JFrame {
 
         CadastrarBotao.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
         CadastrarBotao.setText("Cadastrar Aluno");
+        CadastrarBotao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadastrarBotaoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -122,14 +128,28 @@ public class gui extends javax.swing.JFrame {
                 .addGap(17, 17, 17))
         );
 
+        alunosPainel.setBackground(new java.awt.Color(153, 153, 153));
+        alunosPainel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout alunosPainelLayout = new javax.swing.GroupLayout(alunosPainel);
+        alunosPainel.setLayout(alunosPainelLayout);
+        alunosPainelLayout.setHorizontalGroup(
+            alunosPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 603, Short.MAX_VALUE)
+        );
+        alunosPainelLayout.setVerticalGroup(
+            alunosPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 248, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(AlunosPainel, javax.swing.GroupLayout.DEFAULT_SIZE, 599, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(alunosPainel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -139,7 +159,7 @@ public class gui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(AlunosPainel, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(alunosPainel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -151,6 +171,10 @@ public class gui extends javax.swing.JFrame {
     private void NomeCampo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeCampo1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NomeCampo1ActionPerformed
+
+    private void CadastrarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarBotaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CadastrarBotaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,11 +214,11 @@ public class gui extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AlturaCampo;
     private javax.swing.JTextField AlturaCampo1;
-    public static javax.swing.JScrollPane AlunosPainel;
     private javax.swing.JTextField CPFCampo1;
     private javax.swing.JButton CadastrarBotao;
     private javax.swing.JTextField DataCampo;
     private javax.swing.JTextField NomeCampo1;
+    public static javax.swing.JPanel alunosPainel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
