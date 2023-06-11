@@ -34,13 +34,13 @@ public class gui extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         DataCampo = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        NomeCampo1 = new javax.swing.JTextField();
+        NomeCampo = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        CPFCampo1 = new javax.swing.JTextField();
+        CPFCampo = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        AlturaCampo = new javax.swing.JTextField();
+        PesoCampo = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        AlturaCampo1 = new javax.swing.JTextField();
+        AlturaCampo = new javax.swing.JTextField();
         CadastrarBotao = new javax.swing.JButton();
         alunosPainel = new javax.swing.JPanel();
 
@@ -52,9 +52,9 @@ public class gui extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Fira Sans", 0, 18)); // NOI18N
         jLabel2.setText("Data de nascimento:");
 
-        NomeCampo1.addActionListener(new java.awt.event.ActionListener() {
+        NomeCampo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomeCampo1ActionPerformed(evt);
+                NomeCampoActionPerformed(evt);
             }
         });
 
@@ -86,10 +86,10 @@ public class gui extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(CadastrarBotao, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(DataCampo, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(NomeCampo1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
-                    .addComponent(CPFCampo1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NomeCampo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
+                    .addComponent(CPFCampo, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PesoCampo, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(AlturaCampo, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AlturaCampo1, javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -106,11 +106,11 @@ public class gui extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(NomeCampo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(NomeCampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CPFCampo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CPFCampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -118,11 +118,11 @@ public class gui extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(AlturaCampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PesoCampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(AlturaCampo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AlturaCampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(CadastrarBotao, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
@@ -168,12 +168,12 @@ public class gui extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void NomeCampo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeCampo1ActionPerformed
+    private void NomeCampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeCampoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NomeCampo1ActionPerformed
+    }//GEN-LAST:event_NomeCampoActionPerformed
 
     private void CadastrarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarBotaoActionPerformed
-        // TODO add your handling code here:
+        StudentController.saveStudent();
     }//GEN-LAST:event_CadastrarBotaoActionPerformed
 
     /**
@@ -212,12 +212,12 @@ public class gui extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField AlturaCampo;
-    private javax.swing.JTextField AlturaCampo1;
-    private javax.swing.JTextField CPFCampo1;
+    public static javax.swing.JTextField AlturaCampo;
+    public static javax.swing.JTextField CPFCampo;
     private javax.swing.JButton CadastrarBotao;
-    private javax.swing.JTextField DataCampo;
-    private javax.swing.JTextField NomeCampo1;
+    public static javax.swing.JTextField DataCampo;
+    public static javax.swing.JTextField NomeCampo;
+    public static javax.swing.JTextField PesoCampo;
     public static javax.swing.JPanel alunosPainel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
