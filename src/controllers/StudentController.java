@@ -7,6 +7,8 @@ import dao.StudentDAO;
 import gui.gui;
 import gui.components.AlunoRow;
 import javax.swing.BoxLayout;
+import javax.swing.JOptionPane;
+
 import models.Student;
 
 public class StudentController {
@@ -31,6 +33,15 @@ public class StudentController {
         gui.AlturaCampo.setText("");
 
         showStudents();
+    }
+
+    public static void deleteStudent(AlunoRow alunoRow){
+        if(JOptionPane.showConfirmDialog(null, "Todas as informações serão deletadas", "Deseja excluir esse(a) Aluno(a)?", JOptionPane.YES_NO_OPTION) == 0){
+            Student student = alunoRow.student;
+            dao.delete(student);
+
+            showStudents();
+        }
     }
 
     public static void showStudents(){

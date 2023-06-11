@@ -6,6 +6,7 @@ package gui.components;
 
 import javax.swing.JButton;
 
+import controllers.StudentController;
 import models.Student;
 
 /**
@@ -30,9 +31,12 @@ public class AlunoRow extends javax.swing.JPanel {
         return EditButton;
     }
 
+    public Student student;
+
     public AlunoRow(Student student) {
         initComponents();
-        AlunoNomeCampo.setText(student.getNome());
+        this.student = student;
+        AlunoNomeCampo.setText(this.student.getNome());
     }
 
     /**
@@ -56,6 +60,11 @@ public class AlunoRow extends javax.swing.JPanel {
         ViewButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/components/view_icon.png"))); // NOI18N
 
         DeleteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/components/delete_icon.png"))); // NOI18N
+        DeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteButtonActionPerformed(evt);
+            }
+        });
 
         EditButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/components/edit_icon.png"))); // NOI18N
 
@@ -91,6 +100,10 @@ public class AlunoRow extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
+        StudentController.deleteStudent(this);
+    }//GEN-LAST:event_DeleteButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
