@@ -17,6 +17,7 @@ public class gui extends javax.swing.JFrame {
      */
     public gui() {
         initComponents();
+        //EditSalvarBotão.setVisible(false);
         StudentController.showStudents();
 
     }
@@ -41,7 +42,9 @@ public class gui extends javax.swing.JFrame {
         PesoCampo = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         AlturaCampo = new javax.swing.JTextField();
-        CadastrarBotao = new javax.swing.JButton();
+        EditSalvarBotão = new javax.swing.JButton();
+        CadastrarBotao1 = new javax.swing.JButton();
+        header = new javax.swing.JLabel();
         alunosPainel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,40 +70,59 @@ public class gui extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Fira Sans", 0, 18)); // NOI18N
         jLabel5.setText("Altura:");
 
-        CadastrarBotao.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
-        CadastrarBotao.setText("Cadastrar Aluno");
-        CadastrarBotao.addActionListener(new java.awt.event.ActionListener() {
+        EditSalvarBotão.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
+        EditSalvarBotão.setText("Salvar Aluno");
+        EditSalvarBotão.setEnabled(false);
+        EditSalvarBotão.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CadastrarBotaoActionPerformed(evt);
+                EditSalvarBotãoActionPerformed(evt);
             }
         });
+
+        CadastrarBotao1.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
+        CadastrarBotao1.setText("Cadastrar Aluno");
+        CadastrarBotao1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadastrarBotao1ActionPerformed(evt);
+            }
+        });
+
+        header.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        header.setText("Cadastrar Aluno");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(DataCampo, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(NomeCampo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
-                    .addComponent(CPFCampo, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PesoCampo, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AlturaCampo, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DataCampo)
+                    .addComponent(NomeCampo, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
+                    .addComponent(CPFCampo)
+                    .addComponent(PesoCampo)
+                    .addComponent(AlturaCampo)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(CadastrarBotao)))
+                        .addComponent(EditSalvarBotão)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CadastrarBotao1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addContainerGap()
+                .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(NomeCampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -120,9 +142,11 @@ public class gui extends javax.swing.JFrame {
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(AlturaCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(CadastrarBotao, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(140, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CadastrarBotao1)
+                    .addComponent(EditSalvarBotão))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
 
         alunosPainel.setBackground(new java.awt.Color(153, 153, 153));
@@ -169,9 +193,13 @@ public class gui extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_NomeCampoActionPerformed
 
-    private void CadastrarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarBotaoActionPerformed
+    private void EditSalvarBotãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditSalvarBotãoActionPerformed
         StudentController.saveStudent();
-    }//GEN-LAST:event_CadastrarBotaoActionPerformed
+    }//GEN-LAST:event_EditSalvarBotãoActionPerformed
+
+    private void CadastrarBotao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarBotao1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CadastrarBotao1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -211,11 +239,13 @@ public class gui extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JTextField AlturaCampo;
     public static javax.swing.JTextField CPFCampo;
-    private javax.swing.JButton CadastrarBotao;
+    public static javax.swing.JButton CadastrarBotao1;
     public static javax.swing.JTextField DataCampo;
+    public static javax.swing.JButton EditSalvarBotão;
     public static javax.swing.JTextField NomeCampo;
     public static javax.swing.JTextField PesoCampo;
     public static javax.swing.JPanel alunosPainel;
+    public static javax.swing.JLabel header;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
