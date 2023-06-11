@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import dao.StudentDAO;
 import gui.gui;
 import gui.components.AlunoRow;
+import gui.components.ViewAlunoRow;
+
 import javax.swing.BoxLayout;
 import javax.swing.JOptionPane;
 
@@ -75,18 +77,23 @@ public class StudentController {
 
                 gui.header.setText("Cadastrar aluno");
 
-                // Remover o ActionListener após o uso
                 gui.EditSalvarBotão.removeActionListener(this);
             }
         };
 
-    // Remover qualquer ActionListener anterior antes de adicionar o novo
-    ActionListener[] actionListeners = gui.EditSalvarBotão.getActionListeners();
-    for (ActionListener listener : actionListeners) {
-        gui.EditSalvarBotão.removeActionListener(listener);
+        ActionListener[] actionListeners = gui.EditSalvarBotão.getActionListeners();
+        for (ActionListener listener : actionListeners) {
+            gui.EditSalvarBotão.removeActionListener(listener);
+        }
+
+        gui.EditSalvarBotão.addActionListener(salvarListener);
     }
 
-    gui.EditSalvarBotão.addActionListener(salvarListener);
+    public static void viewStudent(Student student){
+        gui.contentPanel.removeAll();
+        gui.contentPanel.repaint();
+        gui.contentPanel.add(new ViewAlunoRow(student));
+        gui.contentPanel.repaint();
     }
 
     public static void showStudents() {

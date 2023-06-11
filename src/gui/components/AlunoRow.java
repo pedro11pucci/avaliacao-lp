@@ -58,6 +58,11 @@ public class AlunoRow extends javax.swing.JPanel {
         AlunoNomeCampo.setEditable(false);
 
         ViewButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/components/view_icon.png"))); // NOI18N
+        ViewButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ViewButtonActionPerformed(evt);
+            }
+        });
 
         DeleteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/components/delete_icon.png"))); // NOI18N
         DeleteButton.addActionListener(new java.awt.event.ActionListener() {
@@ -113,6 +118,10 @@ public class AlunoRow extends javax.swing.JPanel {
     private void EditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditButtonActionPerformed
         StudentController.updateStudent(this);
     }//GEN-LAST:event_EditButtonActionPerformed
+
+    private void ViewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewButtonActionPerformed
+        StudentController.viewStudent(this.student);
+    }//GEN-LAST:event_ViewButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
