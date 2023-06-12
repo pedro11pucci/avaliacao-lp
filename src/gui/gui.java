@@ -4,7 +4,10 @@
  */
 package gui;
 
+import javax.swing.JFrame;
+
 import controllers.StudentController;
+import gui.components.ViewAluno;
 
 /**
  *
@@ -17,9 +20,7 @@ public class gui extends javax.swing.JFrame {
      */
     public gui() {
         initComponents();
-        //EditSalvarBotão.setVisible(false);
         StudentController.showStudents();
-
     }
 
     /**
@@ -208,11 +209,11 @@ public class gui extends javax.swing.JFrame {
     }//GEN-LAST:event_NomeCampoActionPerformed
 
     private void EditSalvarBotãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditSalvarBotãoActionPerformed
-        StudentController.saveStudent();
+        
     }//GEN-LAST:event_EditSalvarBotãoActionPerformed
 
     private void CadastrarBotao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarBotao1ActionPerformed
-        // TODO add your handling code here:
+        StudentController.saveStudent();
     }//GEN-LAST:event_CadastrarBotao1ActionPerformed
 
     /**

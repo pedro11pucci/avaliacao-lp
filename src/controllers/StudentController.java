@@ -8,9 +8,11 @@ import java.util.ArrayList;
 import dao.StudentDAO;
 import gui.gui;
 import gui.components.AlunoRow;
+import gui.components.ViewAluno;
 import gui.components.ViewAlunoRow;
 
 import javax.swing.BoxLayout;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import models.Student;
@@ -36,6 +38,7 @@ public class StudentController {
         gui.PesoCampo.setText("");
         gui.AlturaCampo.setText("");
 
+        System.out.println("OU");
         showStudents();
     }
 
@@ -98,10 +101,8 @@ public class StudentController {
     }
 
     public static void viewStudent(Student student){
-        gui.contentPanel.removeAll();
-        gui.contentPanel.repaint();
-        gui.contentPanel.add(new ViewAlunoRow(student));
-        gui.contentPanel.repaint();
+        JFrame viewAluno = new ViewAluno(student);  
+        viewAluno.setVisible(true);
     }
 
     public static void showStudents() {
