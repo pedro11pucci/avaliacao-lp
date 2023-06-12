@@ -52,6 +52,8 @@ public class StudentController {
     public static void updateStudent(AlunoRow alunoRow) {
         Student student = alunoRow.student;
 
+        gui.header.setText("Editar aluno");
+
         gui.NomeCampo.setText(student.getNome());
         gui.CPFCampo.setText(student.getCpf());
         gui.DataCampo.setText(student.getData_nascimento());
@@ -76,6 +78,12 @@ public class StudentController {
                 gui.CadastrarBotao1.setEnabled(true);
 
                 gui.header.setText("Cadastrar aluno");
+
+                gui.NomeCampo.setText("");
+                gui.CPFCampo.setText("");
+                gui.DataCampo.setText("");
+                gui.PesoCampo.setText("");
+                gui.AlturaCampo.setText("");
 
                 gui.EditSalvarBotão.removeActionListener(this);
             }
