@@ -3,6 +3,11 @@ package controllers;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import dao.StudentDAO;
@@ -12,6 +17,7 @@ import gui.components.ViewAluno;
 import gui.components.ViewAlunoRow;
 
 import javax.swing.BoxLayout;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -38,7 +44,6 @@ public class StudentController {
         gui.PesoCampo.setText("");
         gui.AlturaCampo.setText("");
 
-        System.out.println("OU");
         showStudents();
     }
 
@@ -73,8 +78,6 @@ public class StudentController {
                 student.setData_nascimento(gui.DataCampo.getText());
                 student.setPeso(Double.parseDouble(gui.PesoCampo.getText()));
                 student.setAltura(Double.parseDouble(gui.AlturaCampo.getText()));
-
-                System.out.println(student.getPeso());
 
                 dao.update(student);
                 showStudents();
@@ -119,5 +122,45 @@ public class StudentController {
         }
         gui.alunosPainel.setVisible(true);
         gui.alunosPainel.revalidate();
+    }
+
+    public static void salvarArquivo(Student student) {
+        JFileChooser fc = new JFileChooser();
+        fc.setCurrentDirectory(new File("C:/downloads"));
+        
+        double altura = student.getAltura()/100;
+        double peso = student.getPeso();
+        String nome = student.getNome();
+        String cpf = student.getCpf();
+        double imc = (peso / (altura * altura));
+        
+        LocalDate dataAtual = LocalDate.now();
+        String dataFormatada = dataAtual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+
+        String interpretacao;
+        if (imc < 18.5) {
+            interpretacao = "Abaixo do peso";
+        } else if (imc < 25) {
+            interpretacao = "Peso normal";
+        } else if (imc < 30) {
+            interpretacao = "Sobrepeso";
+        } else {
+            interpretacao = "Obesidade";
+        }
+
+        String resultado = String.format("Data do cálculo: %s\nCPF: %s\nNome: %s\nÍndice IMC: %.2f\nInterpretação: %s", dataFormatada, cpf, nome, imc, interpretacao);
+
+        try {
+            int resp = fc.showSaveDialog(null);
+            if (resp == JFileChooser.APPROVE_OPTION) {
+                File file = fc.getSelectedFile();
+                FileWriter writer = new FileWriter(file);
+                writer.write(resultado + "\n");
+                writer.close();
+            }
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
