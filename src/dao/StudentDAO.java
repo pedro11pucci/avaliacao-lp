@@ -71,7 +71,7 @@ public class StudentDAO extends ConnectionFactory {
                 student.setCpf(rs.getString("cpf"));
                 student.setNome(rs.getString("nome"));
                 student.setData_nascimento(rs.getString("data_nasc"));
-                student.setPeso(rs.getDouble("altura"));
+                student.setPeso(rs.getDouble("peso"));
                 student.setAltura(rs.getDouble("altura"));
                 list.add(student);
             }

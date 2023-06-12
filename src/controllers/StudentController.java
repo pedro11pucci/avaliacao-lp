@@ -74,6 +74,8 @@ public class StudentController {
                 student.setPeso(Double.parseDouble(gui.PesoCampo.getText()));
                 student.setAltura(Double.parseDouble(gui.AlturaCampo.getText()));
 
+                System.out.println(student.getPeso());
+
                 dao.update(student);
                 showStudents();
 
