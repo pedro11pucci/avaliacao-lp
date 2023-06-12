@@ -108,6 +108,7 @@ public class StudentController {
     public static void viewStudent(Student student){
         JFrame viewAluno = new ViewAluno(student);  
         viewAluno.setVisible(true);
+        viewAluno.setUndecorated(true);
     }
 
     public static void showStudents() {
@@ -128,7 +129,7 @@ public class StudentController {
         JFileChooser fc = new JFileChooser();
         fc.setCurrentDirectory(new File("C:/downloads"));
         
-        double altura = student.getAltura()/100;
+        double altura = student.getAltura();
         double peso = student.getPeso();
         String nome = student.getNome();
         String cpf = student.getCpf();

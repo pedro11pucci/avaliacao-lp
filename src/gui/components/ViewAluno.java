@@ -28,7 +28,7 @@ public class ViewAluno extends javax.swing.JFrame {
         ViewAlturaCampo.setText(String.valueOf(student.getAltura()));
         ViewPesoCampo.setText(String.valueOf(student.getPeso()));
         
-        double altura = student.getAltura()/100;
+        double altura = student.getAltura();
         double peso = student.getPeso();
         String imc = String.format("%.2f", (peso / (altura * altura)));
 

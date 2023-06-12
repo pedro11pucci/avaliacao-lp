@@ -70,7 +70,7 @@ public class gui extends javax.swing.JFrame {
         jLabel4.setText("Peso: (Kg)");
 
         jLabel5.setFont(new java.awt.Font("Fira Sans", 0, 18)); // NOI18N
-        jLabel5.setText("Altura: (cm)");
+        jLabel5.setText("Altura: (m)");
 
         EditSalvarBotão.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
         EditSalvarBotão.setText("Salvar Aluno");
