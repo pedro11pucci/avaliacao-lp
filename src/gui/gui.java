@@ -55,7 +55,7 @@ public class gui extends javax.swing.JFrame {
         jLabel1.setText("Nome:");
 
         jLabel2.setFont(new java.awt.Font("Fira Sans", 0, 18)); // NOI18N
-        jLabel2.setText("Data de nascimento:");
+        jLabel2.setText("Data de nascimento: (AAAA-MM-DD)");
 
         NomeCampo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,10 +67,10 @@ public class gui extends javax.swing.JFrame {
         jLabel3.setText("CPF:");
 
         jLabel4.setFont(new java.awt.Font("Fira Sans", 0, 18)); // NOI18N
-        jLabel4.setText("Peso:");
+        jLabel4.setText("Peso: (Kg)");
 
         jLabel5.setFont(new java.awt.Font("Fira Sans", 0, 18)); // NOI18N
-        jLabel5.setText("Altura:");
+        jLabel5.setText("Altura: (cm)");
 
         EditSalvarBotão.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
         EditSalvarBotão.setText("Salvar Aluno");
@@ -104,7 +104,7 @@ public class gui extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(DataCampo)
-                    .addComponent(NomeCampo, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
+                    .addComponent(NomeCampo)
                     .addComponent(CPFCampo)
                     .addComponent(PesoCampo)
                     .addComponent(AlturaCampo)
@@ -159,7 +159,7 @@ public class gui extends javax.swing.JFrame {
         alunosPainel.setLayout(alunosPainelLayout);
         alunosPainelLayout.setHorizontalGroup(
             alunosPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 641, Short.MAX_VALUE)
+            .addGap(0, 618, Short.MAX_VALUE)
         );
         alunosPainelLayout.setVerticalGroup(
             alunosPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
